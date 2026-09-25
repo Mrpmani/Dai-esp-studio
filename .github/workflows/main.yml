@@ -1,3 +1,4 @@
+
 name: Build APK
 on: [push]
 jobs:
@@ -7,9 +8,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unzip project
         run: |
-          unzip -o "dai esp studio.zip" -d myapp || unzip -o *.zip -d myapp
-          shopt -s dotglob
-          mv myapp/*/*. 2>/dev/null || mv myapp/*. 2>/dev/null || true
+          unzip -o "dai esp studio.zip"
           ls -la
       - uses: actions/setup-java@v4
         with:
